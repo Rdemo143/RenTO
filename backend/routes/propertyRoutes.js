@@ -220,27 +220,33 @@ router.get('/search', async (req, res) => {
     const query = {};
 
     // Handle property type
-    if (type) query.type = type;
+    if (type && type !== 'undefined' && type !== 'null') {
+      query.type = type;
+    }
     
     // Handle price range
     if (minPrice || maxPrice) {
       query['price.amount'] = {};
-      if (minPrice) query['price.amount'].$gte = Number(minPrice);
-      if (maxPrice) query['price.amount'].$lte = Number(maxPrice);
+      if (minPrice && minPrice !== 'undefined' && minPrice !== 'null') {
+        query['price.amount'].$gte = Number(minPrice);
+      }
+      if (maxPrice && maxPrice !== 'undefined' && maxPrice !== 'null') {
+        query['price.amount'].$lte = Number(maxPrice);
+      }
     }
     
     // Handle bedrooms - we need to search in features.bedrooms
-    if (bedrooms) {
+    if (bedrooms && bedrooms !== 'undefined' && bedrooms !== 'null') {
       query['features.bedrooms'] = { $gte: Number(bedrooms) };
     }
     
     // Handle bathrooms - we need to search in features.bathrooms
-    if (bathrooms) {
+    if (bathrooms && bathrooms !== 'undefined' && bathrooms !== 'null') {
       query['features.bathrooms'] = { $gte: Number(bathrooms) };
     }
     
     // Handle location search - search across multiple address fields
-    if (location) {
+    if (location && location !== 'undefined' && location !== 'null') {
       query.$or = [
         { 'address.city': { $regex: location, $options: 'i' } },
         { 'address.state': { $regex: location, $options: 'i' } },

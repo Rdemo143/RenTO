@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'https://rento-fk3u.onrender.com/api'; // Your backend API URL
+// Use environment variable for API URL if available, otherwise use the render URL
+const API_URL = process.env.REACT_APP_API_URL || 'https://rento-fk3u.onrender.com/api'; 
 
 // Create axios instance with default config
 const api = axios.create({
