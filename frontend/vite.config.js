@@ -9,23 +9,10 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Cache-Control': 'no-store',
-      'X-Content-Type-Options': 'nosniff'
-    }
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    rollupOptions: {
-      output: {
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
-      }
-    }
   },
   publicDir: 'public',
-  assetsInclude: ['**/*.json']
 })

@@ -31,21 +31,7 @@ initializeSocket(server);
 
 // Enable CORS - this must come BEFORE other middleware
 app.use(cors({
-  origin: function(origin, callback) {
-    // Allow requests with no origin (like mobile apps, curl, Postman)
-    if (!origin) return callback(null, true);
-    
-    // Allow localhost and any Vercel domains
-    if (
-      origin.startsWith('http://localhost') || 
-      origin.startsWith('https://ren-to.vercel.app') || 
-      origin.includes('demos-projects-3d50be49.vercel.app')
-    ) {
-      return callback(null, true);
-    }
-    
-    callback(new Error('Not allowed by CORS'));
-  },
+  origin: ['https://ren-to.vercel.app', 'https://ren-3xxiob4oh-demos-projects-3d50be49.vercel.app', 'https://ren-71z3tyf7z-demos-projects-3d50be49.vercel.app', 'http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,
