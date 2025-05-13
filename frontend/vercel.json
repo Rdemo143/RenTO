@@ -1,0 +1,13 @@
+{
+  "env": {
+    "VITE_API_URL": "https://rento-fk3u.onrender.com/api"
+  },
+  "build": {
+    "env": {
+      "VITE_API_URL": "https://rento-fk3u.onrender.com/api"
+    }
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+} 
