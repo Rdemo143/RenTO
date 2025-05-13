@@ -100,7 +100,7 @@ export const getTokenAndSave = async () => {
       try {
         const token = localStorage.getItem('authToken');
         if (token) {
-          const response = await fetch('http://localhost:5000/api/users/fcm-token', {
+          const response = await fetch('https://rento-fk3u.onrender.com/api/users/fcm-token', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

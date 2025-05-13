@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; // Your backend API URL
+const API_URL = 'https://rento-fk3u.onrender.com/api'; // Your backend API URL
 
 // Create axios instance with default config
 const api = axios.create({
