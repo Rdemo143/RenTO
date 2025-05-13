@@ -4,4 +4,25 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+<<<<<<< HEAD
+=======
+  base: '/',
+  server: {
+    port: 3000,
+    open: true,
+    fs: {
+      strict: true,
+    }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  publicDir: 'public',
+>>>>>>> 05ca92d (RenTO app)
 })
