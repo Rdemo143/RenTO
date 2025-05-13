@@ -31,7 +31,7 @@ initializeSocket(server);
 
 // Enable CORS - this must come BEFORE other middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://ren-to.vercel.app/',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,
