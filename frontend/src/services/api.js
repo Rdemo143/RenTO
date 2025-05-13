@@ -1,10 +1,7 @@
 import axios from 'axios';
 
-// Use environment variable for API URL if available, or localhost for development
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'; 
-
-// For debugging
-console.log('Using API URL:', API_URL);
+// Use environment variable for API URL if available, otherwise use the render URL
+const API_URL = process.env.REACT_APP_API_URL || 'https://rento-fk3u.onrender.com/api'; 
 
 // Create axios instance with default config
 const api = axios.create({
