@@ -1,0 +1,79 @@
+/* ChatPage specific styles */
+
+.conversation-list {
+    height: calc(100vh - 250px); /* Adjust as needed based on header/footer */
+    overflow-y: auto;
+}
+
+.messages-display {
+    height: calc(100vh - 350px); /* Adjust as needed */
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Message styling */
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    margin-bottom: 15px;
+    clear: both;
+}
+
+.message.sent {
+    align-self: flex-end;
+}
+
+.message.received {
+    align-self: flex-start;
+}
+
+.message-bubble {
+    padding: 10px 15px;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    word-break: break-word;
+}
+
+.message.sent .message-bubble {
+    border-bottom-right-radius: 4px;
+}
+
+.message.received .message-bubble {
+    border-bottom-left-radius: 4px;
+}
+
+.message-info {
+    font-size: 0.75rem;
+    margin-top: 5px;
+    align-self: flex-end;
+}
+
+.message.sent .message-info {
+    text-align: right;
+}
+
+/* Conversation list item styling */
+.list-group-item.active {
+    background-color: #f0f7ff !important;
+    color: #0d6efd !important;
+    border-color: #dee2e6 !important;
+}
+
+/* Make the chat interface responsive */
+@media (max-width: 768px) {
+    .conversation-list {
+        height: 300px;
+    }
+    
+    .messages-display {
+        height: 400px;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+}

@@ -1,0 +1,177 @@
+/* RenTO Theme Styles - Light and Dark Mode */
+
+/* Light Theme (Default) */
+:root {
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --text-muted: #6c757d;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --info-color: #0dcaf0;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --primary-light: #e6f0ff;
+  --primary-dark: #0a58ca;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --navbar-bg: linear-gradient(to right, #ffffff, #f8f9fa);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #2d2d2d;
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --text-muted: #868e96;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --primary-color: #3d8bfd;
+  --secondary-color: #adb5bd;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #343a40;
+  --dark-color: #f8f9fa;
+  --primary-light: rgba(61, 139, 253, 0.2);
+  --primary-dark: #0a58ca;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --navbar-bg: linear-gradient(to right, #1e1e1e, #2d2d2d);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Apply Theme Variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  background: var(--navbar-bg);
+  box-shadow: var(--box-shadow);
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  color: var(--text-primary) !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+  background-color: var(--primary-light);
+}
+
+.card {
+  background-color: var(--bg-card);
+  box-shadow: var(--card-shadow);
+  border-color: var(--border-color);
+}
+
+.card-header {
+  background-color: var(--bg-card);
+  border-bottom-color: var(--border-color);
+}
+
+.card-footer {
+  background-color: var(--bg-card);
+  border-top-color: var(--border-color);
+}
+
+.form-control, .form-select {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modal-content {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modal-header, .modal-footer {
+  border-color: var(--border-color);
+}
+
+.table {
+  color: var(--text-primary);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--bg-primary);
+}
+
+.dropdown-menu {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.dropdown-item {
+  color: var(--text-primary);
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.list-group-item {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+/* Message Bubbles for Chat */
+.message.received .message-bubble {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* Custom Scrollbar for Dark Mode */
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
